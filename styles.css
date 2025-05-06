@@ -48,15 +48,27 @@ button {
 	margin-top: 10px;	
 }
 
-.screen {
-	border: #9846B9 solid 3px;
+#screen {
+	border: #9846B9 solid 4px;
 	width: 400px;
 	height: 400px;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 1px;
+	display: flex;
+	flex-direction: column;
 }
 
+.row {
+	flex: 1 1 auto;
+	display: flex;
+}
+
+
+.pixel {
+	background-color: aliceblue;
+	flex: 1 1 auto;
+}
 footer {
 	background-color: #9846B9;
 }
