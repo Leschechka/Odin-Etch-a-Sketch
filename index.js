@@ -18,7 +18,9 @@ function createPixels(number) {
 
 createPixels(3)
 
-screen.addEventListener('mouseover', (event) => event.target.style.backgroundColor = 'black');
+const toBlack = (event) => event.target.style.backgroundColor = 'black'
+
+screen.addEventListener('mouseover', toBlack);
 
 
 let userChoice = 0
@@ -38,4 +40,11 @@ screen.addEventListener('dblclick', () => {
   for (const pixel of pixels) {
     pixel.style.backgroundColor = 'white'
   }
-})       
+});
+
+const colorPickerBtn = document.getElementById('colorpicker');
+colorPickerBtn.addEventListener('input', () => {
+  const color = colorPickerBtn.value;
+  removeEventListener('mouseover', toBlack, false);
+  screen.addEventListener('mouseover', (event) => event.target.style.backgroundColor = color )
+})
