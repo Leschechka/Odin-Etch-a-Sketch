@@ -18,9 +18,10 @@ function createPixels(number) {
 
 createPixels(3)
 
-const toBlack = (event) => event.target.style.backgroundColor = 'black'
-
-screen.addEventListener('mouseover', toBlack);
+screen.addEventListener(
+  'mouseover',
+  event => (event.target.style.backgroundColor = 'black')
+)
 
 
 let userChoice = 0
@@ -45,6 +46,23 @@ screen.addEventListener('dblclick', () => {
 const colorPickerBtn = document.getElementById('colorpicker');
 colorPickerBtn.addEventListener('input', () => {
   const color = colorPickerBtn.value;
-  removeEventListener('mouseover', toBlack, false);
-  screen.addEventListener('mouseover', (event) => event.target.style.backgroundColor = color )
+  screen.addEventListener(
+    'mouseover',
+    event => (event.target.style.backgroundColor = color)
+  )
+});
+
+function returnRandomNumber() {
+  return Math.floor(Math.random() * (255 - 1 + 1)) + 1
+}
+
+const rgbBtn = document.getElementById('rgb');
+rgbBtn.addEventListener('click', (event) => {
+  screen.addEventListener('mouseover', (event) => {
+    const color1 = returnRandomNumber()
+    const color2 = returnRandomNumber()
+    const color3 = returnRandomNumber()
+    event.target.style.backgroundColor = `rgb(${color1}, ${color2}, ${color3})`
+  })
+
 })
