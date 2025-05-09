@@ -16,14 +16,26 @@ function createPixels(number) {
 }
 
 
-createPixels(16)
+createPixels(3)
 
 screen.addEventListener('mouseover', (event) => event.target.style.backgroundColor = 'black');
 
-const resetBtn = document.getElementById('reset');
-const pixels = document.querySelectorAll('.pixel');
+
+let userChoice = 0
+
+const scaleBtn = document.getElementById('scale');
+scaleBtn.addEventListener('click', () => {
+  const userChoice = parseInt(prompt('Choose from 1 to 100', '4'));
+  if (typeof userChoice == 'number' && userChoice >= 1 && userChoice <= 100) {
+    screen.innerHTML = ""
+    screen.style.backgroundColor = 'white';
+    createPixels(userChoice)
+  }
+});
+
 screen.addEventListener('dblclick', () => {
-  for (let pixel of pixels) {
+  let pixels = document.querySelectorAll('.pixel');
+  for (const pixel of pixels) {
     pixel.style.backgroundColor = 'white'
   }
-})                
+})       
