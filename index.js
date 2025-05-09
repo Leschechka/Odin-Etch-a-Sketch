@@ -1,3 +1,6 @@
+const screen = document.getElementById('screen')
+
+
 function createPixels(number) {
   for (let i = 0; i < number; i++) {
     const div = document.createElement('div')
@@ -13,8 +16,14 @@ function createPixels(number) {
 }
 
 
-const screen = document.getElementById('screen')
-
 createPixels(16)
 
 screen.addEventListener('mouseover', (event) => event.target.style.backgroundColor = 'black');
+
+const resetBtn = document.getElementById('reset');
+const pixels = document.querySelectorAll('.pixel');
+screen.addEventListener('dblclick', () => {
+  for (let pixel of pixels) {
+    pixel.style.backgroundColor = 'white'
+  }
+})                
