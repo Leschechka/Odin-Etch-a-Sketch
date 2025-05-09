@@ -10,27 +10,34 @@ body {
 	display: flex;
 	flex-direction: column;
 	margin: 0;
-	font-family: sans-serif;
+	font-family:'Segoe UI';
 }
 
 nav {
 	background-color: #B946A1;
 	display: flex;
 	padding: 0 10px;
+	color:#ddbfd9
+}
+
+p {
+	font-weight: bolder;
 }
 
 nav ul {
 	padding: 0;
 	margin: 0;
 	display: flex;
-	gap: 4px;
+	gap: 10px;
 	list-style: none;
 	align-items: center;
 	margin-left: auto;
+	justify-content: space-around;
 }
 
 h1 {
 	text-align: center;
+	color: #0d348f;
 }
 
 .body {
@@ -41,19 +48,40 @@ h1 {
 	margin-bottom: 0;
 }
 
+.content {
+	display: flex;
+	justify-content: center;
+	gap: 5px;
+	margin-top: 40px;
+	flex-direction: column;
+	margin-left: auto;
+	margin-right: auto;
+	align-items: center;
+}
+
+.buttons {
+	display: flex;
+	justify-content: flex-start;
+	gap: 10px;
+	align-items:center;
+}
+
 button {
-	padding: 5px 10px;
-	background-color: #e5b2e9;
-	font-weight: bold;
+	padding: 10px 20px;
+	background-color: #f5c3f8;
 	margin-top: 10px;	
+	border: 3px solid #9846B9;
+	border-radius: 10px;
+	color:#041439;
+	font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-size: 18px;
 }
 
 #screen {
-	border: #9846B9 solid 4px;
+	border: #9846B9 solid 7px;
+	border-radius: 10px;
 	width: 400px;
 	height: 400px;
-	margin-left: auto;
-	margin-right: auto;
 	padding: 1px;
 	display: flex;
 	flex-direction: column;
@@ -62,6 +90,28 @@ button {
 .row {
 	flex: 1 1 auto;
 	display: flex;
+}
+
+input[type="color"] {
+	border: none;
+	padding: 0;
+	margin: 5px 0;;
+	background-color: transparent;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	width: 235px;
+	height: 40px;
+}
+
+input[type="color"]::-webkit-color-swatch {
+	border-radius: 5px;
+	border:none;
+}
+
+input[type="color"]::-moz-color-swatch {
+	border-radius: 5px;
+	border:none;
 }
 
 
@@ -79,4 +129,14 @@ footer ul {
 	display: flex;
 	justify-content: space-around;
 	padding: 5px;
+}
+
+a {
+	text-decoration: none;
+	color: #ddbfd9;
+}
+
+a:hover {
+	font-weight: bolder;
+	color: #ffddfa;
 }

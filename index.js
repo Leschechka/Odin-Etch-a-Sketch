@@ -36,7 +36,9 @@ scaleBtn.addEventListener('click', () => {
   }
 });
 
-screen.addEventListener('dblclick', () => {
+
+const resetBtn = document.getElementById('reset')
+resetBtn.addEventListener('click', () => {
   let pixels = document.querySelectorAll('.pixel');
   for (const pixel of pixels) {
     pixel.style.backgroundColor = 'white'

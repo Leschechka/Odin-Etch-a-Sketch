@@ -11,23 +11,27 @@
 <body>
 	<header>
 		<nav>
-			<p>Name</p>
+			<p>Etch-a-Sketch</p>
 			<ul>
-				<li>search</li>
-				<li>contanct</li>
-				<li>about</li>
+				<li><a href="#">search</a></li>
+				<li><a href="#">contact</a></li>
+				<li><a href="#">about</a></li>
 			</ul>
 		</nav>
-		<h1>Your tablet</h1>
 	</header>
 	<div class="body">
-		<button id="scale">scale</button>
-		<label for="colorpicker">
-			<input type="color" id="colorpicker">
-		</label>
-		<button id='rgb'>RGB</button>
-		<div id="screen">
+		<div class="content">
+			<div id="screen">
+			</div>
+			<div class="buttons">
+				<button id="scale">scale</button>
+				<button id='rgb'>rgb</button>
+				<button id="reset">reset</button>
+			</div>
 		</div>
+		<label for="colorpicker">
+			<input type="color" value="#000000" id="colorpicker">
+		</label>
 	</div>
 	<footer>
 		<ul>
